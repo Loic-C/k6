@@ -5,4 +5,4 @@ RUN cp /go/bin/k6 /usr/bin/k6 && \
 ADD src/ /k6-tests/
 WORKDIR /k6-tests
 ENTRYPOINT ["k6"]
-CMD ["run", "/k6-tests/script.js"]
+CMD ["run","--vus","10","--duration","30s", "/k6-tests/script.js"]
