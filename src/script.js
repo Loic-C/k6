@@ -10,7 +10,7 @@ export let options = {
 };
 
 export default function() {
-  let res = http.get('https://test-api.k6.io');
+  let res = http.get('http://example-prometheus-nodejs-thomas-test-cd-qlf.qlf.co.as8677.net/');
   check(res, { 'status was 200': r => r.status == 200 });
   sleep(1);
 }
