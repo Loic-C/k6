@@ -1,8 +1,8 @@
 FROM centos:centos8
-CMD dnf update -y && 
-    dnf upgrade -y &&
-    wget https://bintray.com/loadimpact/rpm/rpm -O bintray-loadimpact-rpm.repo &&
-    sudo mv bintray-loadimpact-rpm.repo /etc/yum.repos.d/ &&
+CMD yum update -y && \
+    yum upgrade -y && \
+    wget https://bintray.com/loadimpact/rpm/rpm -O bintray-loadimpact-rpm.repo && \
+    sudo mv bintray-loadimpact-rpm.repo /etc/yum.repos.d/ && \
     sudo yum install k6
 RUN mkdir /k6-tests
 ADD src/ /k6-tests/
