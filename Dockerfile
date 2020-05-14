@@ -4,7 +4,7 @@ CMD yum update -y && \
     wget https://bintray.com/loadimpact/rpm/rpm -O bintray-loadimpact-rpm.repo && \
     sudo mv bintray-loadimpact-rpm.repo /etc/yum.repos.d/ && \
     sudo yum install k6
-COPY --from=builder /go/bin/k6 /usr/bin/k6
+COPY /go/bin/k6 /usr/bin/k6
 RUN mkdir /k6-tests
 ADD src/ /k6-tests/
 WORKDIR /k6-tests
