@@ -1,6 +1,5 @@
 FROM loadimpact/k6
-RUN cp /go/bin/k6 /usr/bin/k6 && \
-    mkdir /k6-tests
+RUN mkdir /k6-tests
 ADD src/ /k6-tests/
 WORKDIR /k6-tests
 ENTRYPOINT [“k6”]
