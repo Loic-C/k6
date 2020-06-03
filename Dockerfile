@@ -1,4 +1,5 @@
 FROM loadimpact/k6:latest
 
-RUN mkdir /tmp/k6-tests
-COPY /src /tmp/k6-tests
+RUN apk add --update \
+    curl \
+    && rm -rf /var/cache/apk/*
